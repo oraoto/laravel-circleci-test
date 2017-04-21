@@ -30,6 +30,9 @@ jobs:
           name: Install project dependencies
           command: php composer.phar install
       - run:
+          name: Generate application key
+          command: php artisan key:generate
+      - run:
           name: Run CS tests
           command: vendor/bin/phpcs --standard=PSR2 app
       - run:
