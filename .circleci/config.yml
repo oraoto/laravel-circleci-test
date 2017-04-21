@@ -30,8 +30,10 @@ jobs:
           name: Install project dependencies
           command: php composer.phar install
       - run:
-          name: Generate application key
-          command: php artisan key:generate
+          name: Setup enviroment variables
+          command: |
+            cp .env.example .env
+            php artisan key:generate
       - run:
           name: Run CS tests
           command: vendor/bin/phpcs --standard=PSR2 app
