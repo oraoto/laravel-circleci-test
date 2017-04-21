@@ -31,7 +31,7 @@ jobs:
           command: php composer.phar install
       - run:
           name: Run CS tests
-          command: vendor/bin/phpcs
+          command: vendor/bin/phpcs --standard=PSR2 app
       - run:
           name: Run Unit tests
           command: vendor/bin/phpunit
